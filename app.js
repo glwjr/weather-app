@@ -48,31 +48,32 @@ function createCard() {
   getWeather().then((weather) => {
     if(weather !== undefined) {
       const card = document.createElement('div');
-      const cityPara = document.createElement('p');
-      const tempPara = document.createElement('p');
-      const descriptionPara = document.createElement('p');
-      const feelsLikePara = document.createElement('p');
-      const windPara = document.createElement('p');
+      const cityDiv = document.createElement('div');
+      const tempDiv = document.createElement('div');
+      const descriptionDiv = document.createElement('div');
+      const feelsLikeDiv = document.createElement('div');
+      const windDiv = document.createElement('div');
 
       card.classList.add('card');
-      cityPara.classList.add('city');
-      tempPara.classList.add('temp');
-      descriptionPara.classList.add('description');
-      feelsLikePara.classList.add('feels-like');
-      windPara.classList.add('wind');
+      cityDiv.classList.add('city');
+      tempDiv.classList.add('temp');
+      descriptionDiv.classList.add('description');
+      feelsLikeDiv.classList.add('feels-like');
+      windDiv.classList.add('wind');
 
       info.appendChild(card);
-      card.appendChild(cityPara);
-      card.appendChild(tempPara);
-      card.appendChild(descriptionPara);
-      card.appendChild(feelsLikePara);
-      card.appendChild(windPara);
+      card.appendChild(cityDiv);
+      card.appendChild(tempDiv);
+      card.appendChild(descriptionDiv);
+      card.appendChild(feelsLikeDiv);
+      card.appendChild(windDiv);
 
-      cityPara.innerText = weather.name;
-      tempPara.innerText = weather.temp + '\u00B0F';
-      descriptionPara.innerText = weather.description;
-      feelsLikePara.innerText = 'Feels like: ' + weather.feelsLike + '\u00B0F';
-      windPara.innerText = 'Wind: ' + weather.wind + 'mph';
+      cityDiv.innerText = weather.name;
+      tempDiv.innerText = weather.temp + '\u00B0F';
+      descriptionDiv.innerText = weather.description;
+      feelsLikeDiv.innerText = 'Feels Like: ' + weather.feelsLike + '\u00B0F';
+      windDiv.innerText = 'Wind: ' + weather.wind + 'mph';
+
     } else {
       return;
     }
